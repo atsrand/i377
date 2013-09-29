@@ -29,7 +29,7 @@
 	</path>
 
 	<path id="classpath.tomcat">
-		<fileset dir="${tomcat.dir}/lib">
+		<fileset dir="${dir.tomcat}/lib">
 			<include name="*.jar" />
 		</fileset>
 	</path>
