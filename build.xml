@@ -6,7 +6,7 @@
 	<property name="classes.dir" location="${build.dir}/classes" />
 	<property name="dir.lib" value="WebContent/WEB-INF/lib" />
 	<property name="ivy.retrieve.pattern" value="${dir.lib}/[artifact]-[type]-[revision].[ext]" />
-	<property name="ivylib.dir" location="./lib" />
+	<property name="ivylib.dir" location="lib" />
 
 	<property name="webContent.dir" location="WebContent" />
 	<property name="war.file" location="atsrand.war" />
