@@ -7,7 +7,7 @@
 	<property name="dir.lib" value="WebContent/WEB-INF/lib" />
 	<property name="ivy.retrieve.pattern" value="${dir.lib}/[artifact]-[type]-[revision].[ext]" />
 	<property name="basedir" location="." />
-	<property name="ivylib.dir" location="${basedir}/lib" />
+	<property name="ivylib.dir" location="./lib" />
 
 	<property name="webContent.dir" location="WebContent" />
 	<property name="war.file" location="atsrand.war" />
@@ -32,9 +32,6 @@
 
 	<path id="classpath.tomcat">
 		<fileset dir="${dir.tomcat}/lib">
-			<include name="*.jar" />
-		</fileset>
-		<fileset dir="${dir.tomcat}/bin">
 			<include name="*.jar" />
 		</fileset>
 	</path>
