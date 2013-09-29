@@ -10,7 +10,7 @@
 	<property name="webContent.dir" location="WebContent" />
 	<property name="war.file" location="atsrand.war" />
 
-	<path id="classpath">
+	<path id="compile.classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
@@ -19,9 +19,14 @@
 		</fileset>
 	</path>
 
-	<javac srcdir="${src.dir}" destdir="${classes.dir}" source="1.6" target="1.6" includeantruntime="false">
-		<classpath refid="compile.classpath" />
-	</javac>
+	<path id="classpath.tomcat">
+		<fileset dir="${dir.tomcat}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${dir.tomcat}/bin">
+			<include name="*.jar" />
+		</fileset>
+	</path>
 
 	<target name="war" depends="compile">
 		<war destfile="${war.file}" webxml="${webContent.dir}/WEB-INF/web.xml">
@@ -31,16 +36,16 @@
 	</target>
 
 	<target name="retrieve" description="retreive dependencies">
-
-		<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="classpath" />
-
+		<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" 
+			classpathref="compile.classpath" />
 		<ivy:resolve file="${basedir}/ivy.xml" log="downloadonly" />
-
 		<ivy:retrieve pattern="${ivy.retrieve.pattern}" conf="default" />
 	</target>
 
 	<target name="compile" depends="clean, init">
-		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" source="1.6" target="1.6" includeantruntime="false">
+			<classpath refid="compile.classpath" />
+		</javac>
 	</target>
 
 	<target name="init">
@@ -50,4 +55,5 @@
 	<target name="clean">
 		<delete dir="${build.dir}" />
 	</target>
+
 </project>
