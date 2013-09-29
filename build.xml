@@ -20,6 +20,15 @@
 			<include name="*.jar" />
 		</fileset>
 	</path>
+	
+	<path id="retrieve.classpath">
+			<fileset dir="${ivylib.dir}">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${dir.lib}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
 
 	<path id="classpath.tomcat">
 		<fileset dir="${dir.tomcat}/lib">
@@ -39,7 +48,7 @@
 
 	<target name="retrieve" description="retreive dependencies">
 		<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" 
-			classpathref="compile.classpath" />
+			classpathref="retrieve.classpath" />
 		<ivy:resolve file="${basedir}/ivy.xml" log="downloadonly" />
 		<ivy:retrieve pattern="${ivy.retrieve.pattern}" conf="default" />
 	</target>
