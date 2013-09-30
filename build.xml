@@ -20,7 +20,7 @@
 	</path>
 
 	<path id="retrieve.classpath">
-		<fileset dir="${ivylib.dir}">
+		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
 		<fileset dir="${dir.lib}">
