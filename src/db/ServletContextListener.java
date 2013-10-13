@@ -9,7 +9,7 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
     public void contextInitialized(ServletContextEvent arg0) {
     	sdao.dropDatabase();
     	sdao.createSchema();
-    	sdao.createTestdata();
+     	sdao.createTestdata();
     }
 
     public void contextDestroyed(ServletContextEvent arg0) {

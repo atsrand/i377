@@ -5,7 +5,6 @@
 	<property name="build.dir" location="build" />
 	<property name="classes.dir" location="${build.dir}/classes" />
 	<property name="dir.lib" value="WebContent/WEB-INF/lib" />
-	<property name="webinf.dir" value="WebContent/WEB-INF/" />
 	<property name="ivy.retrieve.pattern" value="${dir.lib}/[artifact]-[type]-[revision].[ext]" />
 	<property name="ivylib.dir" location="lib" />
 	<property name="webContent.dir" location="WebContent" />
@@ -24,9 +23,6 @@
 		<war destfile="${war.file}" webxml="${webContent.dir}/WEB-INF/web.xml">
 			<fileset dir="${src.dir}">
 				<include name="*.sql" />
-			</fileset>
-			<fileset dir="${webinf.dir}">
-				<include name="*.jsp" />
 			</fileset>
 			<classes dir="${classes.dir}" />
 			<fileset dir="${webContent.dir}" excludes="**/servlet-api-jar-2.5.jar" />
