@@ -6,7 +6,7 @@ import org.apache.commons.dbutils.DbUtils;
 public class AbstractDao {
 	
 	public static final String DB_URL =
-            "jdbc:hsqldb:file:${user.home}/i377/atsrand/myProjectDataBase;shutdown=true;";
+            "jdbc:hsqldb:file:${user.home}/data/atsrand/myProjectDataBase;shutdown=true;";
 
     private Connection connection;
     protected PreparedStatement pst;
