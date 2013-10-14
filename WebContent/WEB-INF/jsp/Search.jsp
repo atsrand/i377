@@ -9,7 +9,7 @@
 <title>Part 3</title>
 <style type="text/css">
 <!--
-@import url("/myProject/style.css");
+@import url("/atsrand/style.css");
 -->
 </style>
 </head>

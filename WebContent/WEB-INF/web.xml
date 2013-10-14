@@ -86,7 +86,7 @@
   </servlet-mapping>
   <listener>
     <listener-class>
-    	db.ServletContextListener
+    	db.AppContextListener
     </listener-class>
   </listener>
 </web-app>

@@ -1,17 +1,17 @@
 package db;
 
 import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 
-public class ServletContextListener implements javax.servlet.ServletContextListener {
+public class AppContextListener implements ServletContextListener {
 
-	db.SetupDao sdao = new db.SetupDao();
-	
+	@Override
     public void contextInitialized(ServletContextEvent arg0) {
+    	SetupDao sdao = new SetupDao();
     	sdao.dropDatabase();
     	sdao.createSchema();
-     	sdao.createTestdata();
     }
-
+	@Override
     public void contextDestroyed(ServletContextEvent arg0) {
     	
     }	
